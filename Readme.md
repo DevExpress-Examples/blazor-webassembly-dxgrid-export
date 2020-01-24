@@ -20,6 +20,7 @@ The export buttons are located within the [ExportButtons](./CS/DxDataGridExporti
 The [ReportHelper.CreateReport](./CS/DataSourceWebApi/DataSourceWebApi/Services/ExportHelper.cs#L35) method is used to create a report that is exported to the file of the corresponding type using the [ExportToPdf(String)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToPdf(System.String))/[ExportToXlsx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToXlsx(System.IO.Stream))/[ExportToDocx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToDocx(System.IO.Stream)) method.
 
 See also:
-[DataGrid for Blazor - Server side - How to implement the exporting functionality using DevExpress Reporting tools](https://supportcenter.devexpress.com/internal/ticket/details/t854755)
-[How to use DevExpress Reporting Components in Blazor applications](https://supportcenter.devexpress.com/internal/ticket/details/t834711)
+
+[DataGrid for Blazor - Server side - How to implement the exporting functionality using DevExpress Reporting tools](https://supportcenter.devexpress.com/ticket/details/t854755/datagrid-for-blazor-server-side-how-to-implement-the-exporting-functionality-using)
+[How to use DevExpress Reporting Components in Blazor applications](https://supportcenter.devexpress.com/ticket/details/t834711/how-to-use-devexpress-reporting-components-in-blazor-applications)
 
