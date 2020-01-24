@@ -7,7 +7,7 @@
 * [NWINDContext.cs](./CS/DataSourceWebApi/DataSourceWebApi/Models/NWINDContext.cs)
 * [Products.cs](./CS/DataSourceWebApi/DataSourceWebApi/Models/Products.cs)
 
-### DataGrid for Blazor - Client side - How to implement the exporting functionality using DevExpress Reporting tools 
+### DataGrid for Blazor - WebAssembly application - How to implement the exporting functionality using DevExpress Reporting tools 
 
 This example illustrates how to use DevExpress Reporting tools to export DxDataGrid content to different formats (*.pdf*/*.xlsx*/*.docx*) in the Blazor WebAssembly application.
 
