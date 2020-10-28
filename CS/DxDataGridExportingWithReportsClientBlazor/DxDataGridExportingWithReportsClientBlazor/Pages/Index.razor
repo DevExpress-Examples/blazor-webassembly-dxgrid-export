@@ -9,7 +9,7 @@
 @using DxDataGridExportingWithReportsClientBlazor.Components
 @using System.Collections.ObjectModel
 
-<DxDataGrid T="@Products" CustomData="@LoadProductsData">
+<DxDataGrid T="@Products" CustomData="@LoadProductsData" ShowFilterRow="true">
     <Columns>
         <DxDataGridColumn Field="@nameof(Products.ProductName)" />
         <DxDataGridColumn Field="@nameof(Products.CategoryId)" />
@@ -23,7 +23,7 @@
 @code {
     private readonly ObservableCollection<Tuple<string, string>> exportUrlInfo = new ObservableCollection<Tuple<string, string>>();
     [Inject] protected HttpClient Client { get; set; }
-    private string MyWebApiUrl = "https://localhost:44353/api/Products/";
+    private string MyWebApiUrl = "https://localhost:44366/api/Products/";
     protected async Task<LoadResult> LoadProductsData(DataSourceLoadOptionsBase options, CancellationToken cancellationToken)
         => await LoadCustomData(MyWebApiUrl + "Products", options, cancellationToken);
 
