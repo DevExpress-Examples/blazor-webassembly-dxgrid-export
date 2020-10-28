@@ -1,0 +1,15 @@
+﻿@using System.Collections.ObjectModel
+@foreach (Tuple<string, string> urlInfo in ExportUrlInfo) {
+    <a href="@urlInfo.Item1" download>@urlInfo.Item2</a>
+}
+
+@code {
+    [Parameter]
+    public ObservableCollection<Tuple<string, string>> ExportUrlInfo { get; set; }
+    protected override void OnInitialized() {
+        base.OnInitialized();
+        ExportUrlInfo.CollectionChanged += (s, e) => {
+            InvokeAsync(StateHasChanged);
+        };
+    }
+}
