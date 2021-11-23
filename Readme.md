@@ -10,13 +10,11 @@ This example illustrates how to use DevExpress Reporting tools to export Data Gr
 
 ![Resulting Application](images/application.png)
 
-In this example, the Data Grid uses its [CustomData](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.CustomData) property to [bind to the external Web API service](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L26). The Web API service source code is in the [DataSourceWebApi folder](./CS/DataSourceWebApi/DataSourceWebApi). The database name is "Northwind". You can find its script generation file in the [DBBackup folder](./CS/DataSourceWebApi/DataSourceWebApi/DBBackup). Generate this data on your SQL server and change the connection string in [NWINDContext.cs file](./CS/DataSourceWebApi/DataSourceWebApi/Models/NWINDContext.cs) (see the OnConfiguring method). 
+In this example, the Data Grid uses its [CustomData](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.CustomData) property to [bind to the external Web API service](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L26). Use the script generation file in the [DBBackup folder](./CS/DataSourceWebApi/DataSourceWebApi/DBBackup) to generate data on your SQL server and change the connection string in [NWINDContext.cs file](./CS/DataSourceWebApi/DataSourceWebApi/Models/NWINDContext.cs) (see the OnConfiguring method). 
 
-Your export and Web API applications should have the same port. Start the Web API application and copy the port from the URL:
+Your export and Web API applications should have the same port. Start the Web API application, copy the port number from the URL, and paste the buffer content to the `MyWebApiUrl` [variable](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L26):
 
 ![Localhost Port](images/localhost-port.png)
-
-Paste the port number to the `MyWebApiUrl` [variable](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L26).
 
 The [ExportButtons](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Components/ExportButtons.razor) component contains export buttons. Each export button contains an URI to a specific [ExportedDocument](./CS/DataSourceWebApi/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method in the Web API service. This URI contains DataGrid's options. The created report contains only data that is visible in the grid after sort and filter operations.
 
