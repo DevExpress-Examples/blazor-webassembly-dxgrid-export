@@ -3,7 +3,7 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor" Version="20.2.9" />
+    <PackageReference Include="DevExpress.Blazor" Version="21.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.5" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />

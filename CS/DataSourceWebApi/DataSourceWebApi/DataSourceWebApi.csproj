@@ -3,8 +3,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Reporting.Core" Version="20.2.9" />
-    <PackageReference Include="DevExtreme.AspNet.Core" Version="20.2.6" />
+    <PackageReference Include="DevExpress.AspNetCore.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="21.2.3" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="21.2.3" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.8.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
@@ -14,7 +16,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
-    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.7.1" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
