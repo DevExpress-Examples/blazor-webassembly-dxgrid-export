@@ -41,8 +41,6 @@ Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/
 
 ## More Examples
 
-[DataGrid for Blazor - How to use DevExpress Reporting tools to implement export in a server application](https://github.com/DevExpress-Examples/blazor-server-dxdatagrid-export)
-
-[How to use DevExpress Reporting Components in Blazor applications](https://supportcenter.devexpress.com/ticket/details/t834711/how-to-use-devexpress-reporting-components-in-blazor-applications)
-
-[DataGrid for Blazor - How to bind the DataGrid to the Web API Service](https://github.com/DevExpress-Examples/blazor-DxDataGrid-Bind-To-Web-Api-Service)
+* [DataGrid for Blazor - How to use DevExpress Reporting tools to implement export in a server application](https://github.com/DevExpress-Examples/blazor-server-dxdatagrid-export)
+* [How to use DevExpress Reporting Components in Blazor applications](https://supportcenter.devexpress.com/ticket/details/t834711/how-to-use-devexpress-reporting-components-in-blazor-applications)
+* [DataGrid for Blazor - How to bind the DataGrid to the Web API Service](https://github.com/DevExpress-Examples/blazor-DxDataGrid-Bind-To-Web-Api-Service)
