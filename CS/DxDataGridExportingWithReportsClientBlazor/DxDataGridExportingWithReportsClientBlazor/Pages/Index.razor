@@ -6,7 +6,6 @@
 @using DxDataGridExportingWithReportsClientBlazor.Models
 @using System.Net.Http
 @using System.Text.Json
-@using DxDataGridExportingWithReportsClientBlazor.Components
 @using System.Collections.ObjectModel
 
 <DxDataGrid T="@Products" CustomData="@LoadProductsData" ShowFilterRow="true">
@@ -20,10 +19,11 @@
     </Columns>
 </DxDataGrid>
 <ExportButtons ExportUrlInfo="@exportUrlInfo"></ExportButtons>
+
 @code {
     private readonly ObservableCollection<Tuple<string, string>> exportUrlInfo = new ObservableCollection<Tuple<string, string>>();
     [Inject] protected HttpClient Client { get; set; }
-    private string MyWebApiUrl = "https://localhost:44314/api/Products/";
+    private string MyWebApiUrl = "https://localhost:44342/api/Products/";
     protected async Task<LoadResult> LoadProductsData(DataSourceLoadOptionsBase options, CancellationToken cancellationToken)
         => await LoadCustomData(MyWebApiUrl + "Products", options, cancellationToken);
 
