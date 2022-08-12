@@ -18,17 +18,17 @@ Your export and Web API applications should have the same port. Start the Web AP
 
 ![Localhost Port](images/localhost-port.png)
 
-The [ExportButtons](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Components/ExportButtons.razor) component contains export buttons. Each export button contains an URI to a specific [ExportedDocument](./CS/DataSourceWebApi/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method in the Web API service. This URI contains DataGrid's options, and the created report contains only data that is visible in the grid after sort and filter operations.
+The [ExportButtons](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Shared/ExportButtons.razor) component contains export buttons. Each export button contains an URI to a specific [ExportedDocument](./CS/DataSourceWebApi/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method in the Web API service. This URI contains DataGrid's options, and the created report contains only data that is visible in the grid after sort and filter operations.
 
 
-Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/ReportHelper.cs#L9) method with the [ExportToPdf(String)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToPdf(System.String-DevExpress.XtraPrinting.PdfExportOptions)), [ExportToXlsx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToXls(System.IO.Stream-DevExpress.XtraPrinting.XlsExportOptions)), or [ExportToDocx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToDocx(System.IO.Stream-DevExpress.XtraPrinting.DocxExportOptions)) methods to create a report that is exported to the file of the corresponding type.
+Use the [ExportHelper.CreateReport](./CS/DataSourceWebApi/DataSourceWebApi/Services/ExportHelper.cs#L35) method with the [ExportToPdf(String)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToPdf(System.String-DevExpress.XtraPrinting.PdfExportOptions)), [ExportToXlsx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToXls(System.IO.Stream-DevExpress.XtraPrinting.XlsExportOptions)), or [ExportToDocx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToDocx(System.IO.Stream-DevExpress.XtraPrinting.DocxExportOptions)) methods to create a report that is exported to the file of the corresponding type.
 
 <!-- default file list -->
 
 ## Files to Look At
 
 * [Index.razor](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor)
-* [ExportButtons.razor](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Components/ExportButtons.razor)
+* [ExportButtons.razor](./CS/DxDataGridExportingWithReportsClientBlazor/DxDataGridExportingWithReportsClientBlazor/Shared/ExportButtons.razor)
 * [ProductsController.cs](./CS/DataSourceWebApi/DataSourceWebApi/Controllers/ProductsController.cs)
 * [ExportHelper.cs](./CS/DataSourceWebApi/DataSourceWebApi/Services/ExportHelper.cs)
 * [NWINDContext.cs](./CS/DataSourceWebApi/DataSourceWebApi/Models/NWINDContext.cs)
