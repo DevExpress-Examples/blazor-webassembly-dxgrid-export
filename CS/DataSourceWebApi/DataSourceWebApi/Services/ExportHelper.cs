@@ -34,9 +34,9 @@ namespace DataSourceWebApi.Services
         }
         private void CreateReport(XtraReport report, string[] fields) {
             PageHeaderBand pageHeader = new PageHeaderBand() { HeightF = 23, Name = "pageHeaderBand" };
-            int tableWidth = report.PageWidth - report.Margins.Left - report.Margins.Right;
+            float tableWidth = report.PageWidth - report.Margins.Left - report.Margins.Right;
             XRTable headerTable = XRTable.CreateTable(
-                                new Rectangle(0,    // rect X
+                                new RectangleF(0,    // rect X
                                                 0,          // rect Y
                                                 tableWidth, // width
                                                 40),        // height
@@ -45,7 +45,7 @@ namespace DataSourceWebApi.Services
             headerTable.Borders = DevExpress.XtraPrinting.BorderSide.All;
             headerTable.BackColor = Color.Gainsboro;
             headerTable.Font = new Font("Verdana", 10, FontStyle.Bold);
-            headerTable.Rows.FirstRow.Width = tableWidth;
+            headerTable.Rows.FirstRow.WidthF = tableWidth;
             headerTable.BeginInit();
             foreach (string field in fields) {
                 XRTableCell cell = new XRTableCell();
@@ -62,7 +62,7 @@ namespace DataSourceWebApi.Services
 
             DetailBand detail = new DetailBand() { HeightF = 23, Name = "detailBand" };
             XRTable detailTable = XRTable.CreateTable(
-                            new Rectangle(0,    // rect X
+                            new RectangleF(0,    // rect X
                                             0,          // rect Y
                                             tableWidth, // width
                                             40),        // height
@@ -71,8 +71,8 @@ namespace DataSourceWebApi.Services
 
 
 
-            detailTable.Width = tableWidth;
-            detailTable.Rows.FirstRow.Width = tableWidth;
+            detailTable.WidthF = tableWidth;
+            detailTable.Rows.FirstRow.WidthF = tableWidth;
             detailTable.Borders = DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom;
             detailTable.BeginInit();
             foreach (string field in fields) {
