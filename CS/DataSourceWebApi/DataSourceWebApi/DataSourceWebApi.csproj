@@ -3,9 +3,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.AspNetCore.Core" Version="21.2.3" />
-    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="21.2.3" />
-    <PackageReference Include="DevExtreme.AspNet.Core" Version="21.2.3" />
+    <PackageReference Include="DevExpress.AspNetCore.Core" Version="22.1.6" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="22.1.6" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="22.1.6" />
     <PackageReference Include="DevExtreme.AspNet.Data" Version="2.8.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.*" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.*" />
