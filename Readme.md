@@ -6,7 +6,7 @@
 
 # Data Grid for Blazor - How to use DevExpress Reporting tools to implement export in a WASM application
 
-The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component. 
+The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component and use its built-in [export functionality](https://demos.devexpress.com/blazor/Export/DataAwareExport).
 
 This example illustrates how to use DevExpress Reporting tools to export Data Grid's content to different file formats (.pdf/.xlsx/.docx) in a Blazor WebAssembly application.
 
