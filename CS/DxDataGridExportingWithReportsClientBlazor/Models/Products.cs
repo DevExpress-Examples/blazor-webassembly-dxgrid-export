@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DxDataGridExportingWithReportsClientBlazor.Models
+namespace DxDataGridExport.Models
 {
     public partial class Products
     {
