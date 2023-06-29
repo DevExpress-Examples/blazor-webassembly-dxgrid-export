@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using DataSourceWebApi.Models;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataSourceWebApi
 {
@@ -35,7 +37,12 @@ namespace DataSourceWebApi
                     });
             });
             services.AddControllers();
-            services.AddDbContext<NWINDContext>();
+            services.AddEntityFrameworkSqlite();
+            services.AddDbContext<NWINDContext>((sp, options) => {
+                var env = sp.GetRequiredService<IWebHostEnvironment>();
+                var dbPath = Path.Combine(env.ContentRootPath, "Northwind.db");
+                options.UseSqlite("DataSource=" + dbPath);
+            });
             services.AddSingleton<ExportHelper>();
         }
 

@@ -4,24 +4,23 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Data Grid for Blazor - How to use DevExpress Reporting tools to implement export in a WASM application
+# Grid for Blazor - How to use DevExpress Reporting tools to implement export in a WebAssembly application
 
-The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component and use its built-in [export functionality](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport).
+The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) to XLS, XLSX, and CSV file formats. You can also use DevExpress Reporting tools to implement export to different formats (PDF, XLSX, and DOCX). This example illustrates how to do this in a Blazor WebAssembly application.
 
-This example illustrates how to use DevExpress Reporting tools to export Data Grid's content to different file formats (.pdf/.xlsx/.docx) in a Blazor WebAssembly application.
+![Exported PDF](images/exported-pdf.png)
 
-![Resulting Application](images/application.png)
+## Quick Start
 
-In this example, the Data Grid uses its [CustomData](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.CustomData) property to [bind to the external Web API service](./CS/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L26). Use the script generation file in the [DBBackup folder](./CS/DataSourceWebApi/DBBackup) to generate data on your SQL server and change the connection string in [NWINDContext.cs file](./CS/DataSourceWebApi/Models/NWINDContext.cs) (see the OnConfiguring method). 
-
-Your export and Web API applications should have the same port. Start the Web API application, copy the port number from the URL, and paste the buffer content to the `MyWebApiUrl` [variable](./CS/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L26):
+Both export and Web API applications should have the same port. Start the Web API application, copy the port number from the URL, and paste the buffer content to the `MyWebApiUrl` [variable](./CS/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L27):
 
 ![Localhost Port](images/localhost-port.png)
 
-The [ExportButtons](./CS/DxDataGridExportingWithReportsClientBlazor/Shared/ExportButtons.razor) component contains export buttons. Each export button contains an URI to a specific [ExportedDocument](./CS/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method in the Web API service. This URI contains DataGrid's options, and the created report contains only data that is visible in the grid after sort and filter operations.
+## Overview
 
+The code example uses the [GridDevExtremeDataSource](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1) to bind the Grid to an [IQueryable<T>](https://docs.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1) data collection published as an HTTP service. The [CustomizeLoadOptions](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1.CustomizeLoadOptions) property customizes load options before the Grid loads data.
 
-Use the [ExportHelper.CreateReport](./CS/DataSourceWebApi/Services/ExportHelper.cs#L35) method with the [ExportToPdf(String)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToPdf(System.String-DevExpress.XtraPrinting.PdfExportOptions)), [ExportToXlsx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToXls(System.IO.Stream-DevExpress.XtraPrinting.XlsExportOptions)), or [ExportToDocx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToDocx(System.IO.Stream-DevExpress.XtraPrinting.DocxExportOptions)) methods to create a report that is exported to the file of the corresponding type.
+The [ExportButtons](./CS/GridExportingWithReports/Shared/ExportButtons.razor) component displays buttons that allow you to export grid data to PDF, XLSX, and DOCX files. When you click a button, it sends a request with the corresponding file format to the [ExportedDocument](./CS/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method. The method creates a report based on the Grid's layout and exports the report to a PDF, XLSX, or DOCX file. Once the export operation is completed, the button downloads the result file to your computer.
 
 <!-- default file list -->
 
@@ -39,10 +38,10 @@ Use the [ExportHelper.CreateReport](./CS/DataSourceWebApi/Services/ExportHelper.
 ## Documentation
 
 * [XtraReport](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport)
-* [Data Grid: Data Binding](http://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.Data)
+* [Grid - Bind to Data](https://docs.devexpress.com/Blazor/403737/components/grid/bind-to-data)
 
 ## More Examples
 
-* [DataGrid for Blazor - How to use DevExpress Reporting tools to implement export in a server application](https://github.com/DevExpress-Examples/blazor-server-dxdatagrid-export)
-* [How to use DevExpress Reporting Components in Blazor applications](https://supportcenter.devexpress.com/ticket/details/t834711/how-to-use-devexpress-reporting-components-in-blazor-applications)
-* [DataGrid for Blazor - How to bind the DataGrid to the Web API Service](https://github.com/DevExpress-Examples/blazor-DxDataGrid-Bind-To-Web-Api-Service)
+* [Grid for Blazor - How to use DevExpress Reporting tools to implement export in a server application](https://github.com/DevExpress-Examples/blazor-server-dxgrid-export)
+* [Grid for Blazor - How to bind the Web API Service](https://github.com/DevExpress-Examples/blazor-DxGrid-Bind-To-Web-Api-Service)
+* [How to Integrate Blazor Server Reporting (JavaScript-Based) Controls in DevExpress Blazor Application](https://github.com/DevExpress-Examples/Reporting-Blazor-Getting-Started)
