@@ -12,7 +12,7 @@ The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you 
 
 ## Quick Start
 
-Both export and Web API applications should have the same port. Start the Web API application, copy the port number from the URL, and paste the buffer content to the `MyWebApiUrl` [variable](./CS/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L27):
+The export application should connect to the same port that the Web API application uses. Start the Web API application, copy the port number from the URL, and paste the buffer content to the `MyWebApiUrl` [variable](./CS/DxDataGridExportingWithReportsClientBlazor/Pages/Index.razor#L27):
 
 ![Localhost Port](images/localhost-port.png)
 
