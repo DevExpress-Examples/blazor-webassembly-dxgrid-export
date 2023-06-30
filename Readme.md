@@ -5,7 +5,8 @@
 
 # Grid for Blazor - How to use DevExpress Reporting tools to implement export in a WebAssembly application
 
-The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) in XLS, XLSX, and CSV file formats. You can also use DevExpress Reporting tools to implement export in different formats (PDF, XLSX, and DOCX). This example illustrates how to accomplish this task in a Blazor WebAssembly application.
+The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) in XLS, XLSX, and CSV formats. You can also use DevExpress Reporting tools to implement export to different formats (PDF, XLSX, and DOCX). This example illustrates how to accomplish this task in a Blazor WebAssembly application.
+
 
 ![Exported PDF](images/exported-pdf.png)
 
