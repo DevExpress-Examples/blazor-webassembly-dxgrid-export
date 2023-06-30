@@ -15,6 +15,7 @@ namespace DataSourceWebApi.Models
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
-        public string Ean13 { get; set; }
+
+        public virtual Categories Category { get; set; }
     }
 }

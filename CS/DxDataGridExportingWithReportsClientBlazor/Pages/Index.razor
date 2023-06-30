@@ -7,35 +7,37 @@
 @using System.Net.Http
 @using System.Text.Json
 @using System.Collections.ObjectModel
+@inject NavigationManager NavigationManager
+@inject HttpClient HttpClient
 
-<DxDataGrid T="@Products" CustomData="@LoadProductsData" ShowFilterRow="true">
+<DxGrid Data="GridData" ShowFilterRow="true">
     <Columns>
-        <DxDataGridColumn Field="@nameof(Products.ProductName)" />
-        <DxDataGridColumn Field="@nameof(Products.CategoryId)" />
-        <DxDataGridColumn Field="@nameof(Products.UnitPrice)" />
-        <DxDataGridColumn Field="@nameof(Products.UnitsInStock)" />
-        <DxDataGridColumn Field="@nameof(Products.UnitsOnOrder)" />
-        <DxDataGridCheckBoxColumn Field="@nameof(Products.Discontinued)" />
+        <DxGridDataColumn FieldName="ProductName" Width="25%"/>
+        <DxGridDataColumn FieldName="CategoryId" />
+        <DxGridDataColumn FieldName="UnitPrice" />
+        <DxGridDataColumn FieldName="UnitsInStock" />
+        <DxGridDataColumn FieldName="UnitsOnOrder" />
+        <DxGridDataColumn FieldName="Discontinued" />
     </Columns>
-</DxDataGrid>
+</DxGrid>
 <ExportButtons ExportUrlInfo="@exportUrlInfo"></ExportButtons>
 
 @code {
     private readonly ObservableCollection<Tuple<string, string>> exportUrlInfo = new ObservableCollection<Tuple<string, string>>();
-    [Inject] protected HttpClient Client { get; set; }
-    private string MyWebApiUrl = "https://localhost:44342/api/Products/";
-    protected async Task<LoadResult> LoadProductsData(DataSourceLoadOptionsBase options, CancellationToken cancellationToken)
-        => await LoadCustomData(MyWebApiUrl + "Products", options, cancellationToken);
+    private string MyWebApiUrl = "https://localhost:55040/api/Products/";
+    object GridData { get; set; }
 
-    protected async Task<LoadResult> LoadCustomData(string dataEndpointUri, DataSourceLoadOptionsBase options, CancellationToken cancellationToken) {
-        exportUrlInfo.Clear();
-        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=pdf", "Export PDF"));
-        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=xlsx", "Export XLSX"));
-        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=docx", "Export DOCX"));
-
-        using var response = await Client.GetAsync(options.ConvertToGetRequestUri(dataEndpointUri), cancellationToken);
-        response.EnsureSuccessStatusCode();
-        using var responseStream = await response.Content.ReadAsStreamAsync();
-        return await JsonSerializer.DeserializeAsync<LoadResult>(responseStream, cancellationToken: cancellationToken);
+    protected override async Task OnInitializedAsync() {
+        var uri = new Uri(MyWebApiUrl + "Products");
+        var dataSource = new GridDevExtremeDataSource<Products>(HttpClient, uri);
+        dataSource.CustomizeLoadOptions = (loadOptions) => {
+            if (loadOptions.IsCountQuery == false) {
+                exportUrlInfo.Clear();
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=pdf", "Export PDF"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=xlsx", "Export XLSX"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=docx", "Export DOCX"));
+            }
+        };
+        GridData = dataSource;        
     }
 }
