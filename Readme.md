@@ -21,7 +21,7 @@ The export application should connect to the same port that the Web API applicat
 
 The code example uses the [GridDevExtremeDataSource](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1) to bind the Grid to an [IQueryable<T>](https://docs.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1) data collection published as an HTTP service. The [CustomizeLoadOptions](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1.CustomizeLoadOptions) property customizes load options before the Grid loads data.
 
-The [ExportButtons](./CS/GridExportingWithReports/Shared/ExportButtons.razor) component displays buttons that allow you to export data to PDF, XLSX, and DOCX files. When you click a button, it sends a request with the corresponding file format to the [ExportedDocument](./CS/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method. The method creates a report based on the Grid layout and exports the report to a PDF, XLSX, or DOCX file. Once the export operation is completed, the button downloads the resulting file to your computer.
+The [ExportButtons](./CS/DxDataGridExportingWithReportsClientBlazor/Shared/ExportButtons.razor) component displays buttons that allow you to export data to PDF, XLSX, and DOCX files. When you click a button, it sends a request with the corresponding file format to the [ExportedDocument](./CS/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method. The method creates a report based on the Grid layout and exports the report to a PDF, XLSX, or DOCX file. Once the export operation is completed, the button downloads the resulting file to your computer.
 
 <!-- default file list -->
 
