@@ -33,9 +33,9 @@
         dataSource.CustomizeLoadOptions = (loadOptions) => {
             if (loadOptions.IsCountQuery == false) {
                 exportUrlInfo.Clear();
-                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=pdf", "Export PDF"));
-                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=xlsx", "Export XLSX"));
-                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=docx", "Export DOCX"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=mht", "Export to MHT"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=html", "Export to HTML"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(MyWebApiUrl + "ExportedDocument") + "&format=docx", "Export to DOCX"));
             }
         };
         GridData = dataSource;        
