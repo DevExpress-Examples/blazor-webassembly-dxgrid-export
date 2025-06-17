@@ -5,11 +5,11 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# Grid for Blazor - How to Export Data to PDF, XLSX, and DOCX formats in a WebAssembly application
+# Blazor Grid - How to Export Data to DOCX, HTML, and MHT formats in a WebAssembly application
 
-The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) in XLS, XLSX, and CSV formats. You can also use DevExpress Reporting tools to implement export to different formats (PDF, XLSX, and DOCX). This example illustrates how to accomplish this task in a Blazor WebAssembly application.
+The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) to PDF, XLS, XLSX, and CSV formats. You can also use DevExpress Reporting tools to implement export to different formats (DOCX, HTML, and MHT). This example illustrates how to accomplish this task in a Blazor WebAssembly application.
 
-![Exported PDF](images/exported-pdf.png)
+![Exported Docx](images/exported-docx.png)
 
 ## Quick Start
 
@@ -21,7 +21,7 @@ The export application should connect to the same port that the Web API applicat
 
 The code example uses the [GridDevExtremeDataSource](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1) to bind the Grid to an [IQueryable<T>](https://docs.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1) data collection published as an HTTP service. The [CustomizeLoadOptions](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1.CustomizeLoadOptions) property customizes load options before the Grid loads data.
 
-The [ExportButtons](./CS/DxDataGridExportingWithReportsClientBlazor/Shared/ExportButtons.razor) component displays buttons that allow you to export data to PDF, XLSX, and DOCX files. When you click a button, it sends a request with the corresponding file format to the [ExportedDocument](./CS/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method. The method creates a report based on the Grid layout and exports the report to a PDF, XLSX, or DOCX file. Once the export operation is completed, the button downloads the resulting file to your computer.
+The [ExportButtons](./CS/DxDataGridExportingWithReportsClientBlazor/Shared/ExportButtons.razor) component displays buttons that allow you to export data to DOCX, HTML, and MHT files. When you click a button, it sends a request with the corresponding file format to the [ExportedDocument](./CS/DataSourceWebApi/Controllers/ProductsController.cs#L34) controller method. The method creates a report based on the Grid layout and exports the report to a DOCX, HTML, and MHT file. Once the export operation is completed, the button downloads the resulting file to your computer.
 
 <!-- default file list -->
 

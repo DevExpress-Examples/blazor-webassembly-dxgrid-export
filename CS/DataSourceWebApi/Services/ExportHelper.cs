@@ -11,8 +11,8 @@ namespace DataSourceWebApi.Services
 {
     public class ExportHelper
     {
-        private readonly string pdf = "pdf";
-        private readonly string xlsx = "xlsx";
+        private readonly string mht = "mht";
+        private readonly string html = "html";
         private readonly string docx = "docx";
         public async Task<byte[]> ExportResult(LoadResult lr, string format) {
             XtraReport report = new XtraReport();
@@ -22,10 +22,10 @@ namespace DataSourceWebApi.Services
             return await new TaskFactory().StartNew(() => {
                 report.CreateDocument();
                 using (MemoryStream fs = new MemoryStream()) {
-                    if (format == pdf)
-                        report.ExportToPdf(fs);
-                    else if (format == xlsx)
-                        report.ExportToXlsx(fs);
+                    if (format == mht)
+                        report.ExportToMht(fs);
+                    else if (format == html)
+                        report.ExportToHtml(fs);
                     else if (format == docx)
                         report.ExportToDocx(fs);
                     return fs.ToArray();
