@@ -47,7 +47,7 @@ The [ExportButtons](./CS/DxDataGridExportingWithReportsClientBlazor/Shared/Expor
 * [Grid for Blazor - How to bind the Web API Service](https://github.com/DevExpress-Examples/blazor-DxGrid-Bind-To-Web-Api-Service)
 * [How to Integrate Blazor Server Reporting (JavaScript-Based) Controls in DevExpress Blazor Application](https://github.com/DevExpress-Examples/Reporting-Blazor-Getting-Started)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=blazor-webassembly-dxgrid-export&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=blazor-webassembly-dxgrid-export&~~~was_helpful=no)
 
